@@ -44,6 +44,7 @@ require "go_next_prev"
 require "go_up"
 require "session"
 require "quickmarks"
+require "web_get"
 
 -- Init bookmarks lib
 require "bookmarks"
