@@ -42,6 +42,7 @@ require "session"
 require "quickmarks"
 require "proxy"
 require "userscripts"
+require "adblock"
 
 -- Init bookmarks lib
 require "bookmarks"
