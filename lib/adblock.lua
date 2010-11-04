@@ -12,6 +12,7 @@
 local info = info
 local ipairs = ipairs
 local io = io
+local os = os
 local string = string
 local table = table
 local tostring = tostring
@@ -75,7 +76,11 @@ end
 
 -- Parses an Adblock Plus compatible filter list
 parse_abpfilterlist = function (filename)
-    info("adblock: loading filterlist %s", tostring(filename))
+    if os.exists(filename) then
+        info("adblock: loading filterlist %s", filename)
+    else
+        info("adblock: error loading filter list (%s: No such file or directory)", filename)
+    end
     local pat
     local white, black = {}, {}
     for line in io.lines(filename) do
