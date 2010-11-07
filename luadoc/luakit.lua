@@ -46,8 +46,8 @@ module("luakit")
 --- Spawn process synchronously
 -- @param cmd Command to execute. It is parsed with simple shell-like parser.
 -- @return An exit status of the command.
--- @return A string containig data printed on stdout.
--- @return A string containig data printed on stderr.
+-- @return A string containing data printed on stdout.
+-- @return A string containing data printed on stderr.
 -- @name spawn_sync
 -- @class function
 

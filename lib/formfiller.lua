@@ -169,7 +169,7 @@ webview.methods.formfiller = function(view, w, action)
         if profile:find("\n") then
             local exit_status, multiline, err = luakit.spawn_sync('sh -c \'if [ "`dmenu --help 2>&1| grep lines`x" != "x" ]; then echo -n "-l 3"; else echo -n ""; fi\'')
             if exit_status ~= 0 then
-                print(string.format("An error occured: %s", err))
+                info("formfiller: An error occured: %s", err)
                 return nil
             end
             -- color settings
@@ -180,7 +180,7 @@ webview.methods.formfiller = function(view, w, action)
             profile = string.format('sh -c \'echo -e -n "%s" | dmenu %s -nb "%s" -nf "%s" -sb "%s" -sf "%s" -p "Choose profile"\'', profile, multiline, NB, NF, SB, SF)
             exit_status, profile, err = luakit.spawn_sync(profile)
             if exit_status ~= 0 then
-                print(string.format("An error occured: ", err))
+                info("formfiller: An error occured: ", err)
                 return nil
             end
         end
