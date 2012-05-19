@@ -50,6 +50,8 @@ abp_to_pattern = function (s)
     if pos then
         s, opts = string.sub(s, 0, pos-1), string.sub(s, pos+1)
     end
+    -- Check for empty pattern
+    if not s or string.find(s, "https?:/?/?$") then return nil end
 
     -- Protect magic characters (^$()%.[]*+-?) not used by ABP (^$()[]*)
     s = string.gsub(s, "([%%%.%+%-%?])", "%%%1")
