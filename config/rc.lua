@@ -86,6 +86,9 @@ require "session"
 -- Add command to list closed tabs & bind to open closed tabs
 require "undoclose"
 
+-- Add command to list current tabs
+require "tabmenu"
+
 -- Add command to list tab history items
 require "tabhistory"
 
